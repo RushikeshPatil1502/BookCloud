@@ -7,7 +7,7 @@ function FeatureCards({title , icon , description}) {
          <h3 className='text-2xl font-bold mb-2'>{title}</h3>
          <p className='text-lg font-semibold'>{
             description.map((point , i) => 
-            <li className='text-gray-600' key={i}>
+            <li className='text-gray-600 list-none' key={i}>
                {point}
             </li>
             )
