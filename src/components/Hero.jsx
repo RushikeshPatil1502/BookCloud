@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Main() {
+function Hero() {
   return (
     <div className='flex justify-around items-center px-36'>
         <div className='w-[614px] h-[408px] shadow-2xl flex justify-center items-center'>
@@ -34,4 +34,4 @@ function Main() {
   )
 }
 
-export default Main
+export default Hero
