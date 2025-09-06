@@ -1,12 +1,25 @@
-# React + Vite
+# 📚 BookCloud
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BookCloud is a web app that converts your books into **audiobooks** 📖🎧.  
+It allows users to upload book pages, generate audio, and listen back in a Spotify-like interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 🔐 **Authentication** with Google (via Supabase)
+- 📤 **Upload Books** – upload book pages or files
+- 🎧 **Audiobook Playback** – UI with play/stop controls
+- 📑 **My Books Section** – manage and listen to your generated audiobooks
+- 🎨 **Responsive Dashboard** – Navbar + Sidebar layout
+- ☁️ **Deployed on Vercel**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **Frontend:** React + TailwindCSS + Flowbite UI + React Icons  
+- **Backend/Auth:** Supabase  
+- **Deployment:** Vercel  
+
+---
+
+## 📂 Project Structure
