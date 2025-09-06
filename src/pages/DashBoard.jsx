@@ -1,6 +1,8 @@
 import React from 'react'
 import { useUser } from '../context/userContext'
 import { supabase } from '../supabaseClient';
+import { useNavigate } from "react-router-dom";
+
 
 "use client";
 
@@ -12,15 +14,16 @@ function DashBoard() {
     const {user,setUser} = useUser()
     console.log(user);
 
-    const handleSignOut = async () => {
+const navigate = useNavigate();
+
+const handleSignOut = async () => {
   const { error } = await supabase.auth.signOut();
-  if (error) {
-    console.error("Sign-out error:", error.message);
-  } else {
-    // clear context + redirect
+  if (!error) {
     setUser(null);
-    window.location.href = "/Login";
+    navigate("/Login"); // ✅ handled client-side, no server fetch
   }
+};
+
 };
 
 
