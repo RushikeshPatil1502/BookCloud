@@ -3,9 +3,20 @@ import { useState, useEffect } from 'react'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { supabase } from '../supabaseClient'
+import DashBoard from "./DashBoard"
+import { useUser } from "../context/userContext"
+import { useNavigate } from "react-router-dom"
 
 
   export default function Login() {
+    const {user} = useUser()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if(user){
+          navigate("/Dashboard")
+        }
+    },[user])
     const [session, setSession] = useState(null)
 
     useEffect(() => {
@@ -22,6 +33,10 @@ import { supabase } from '../supabaseClient'
       return () => subscription.unsubscribe()
     }, [])
 
+    const signOut = async () =>{
+      const { error } = await supabase.auth.signOut()
+    }
+
     if (!session) {
       return (
     <div className="flex h-screen items-center justify-center bg-gray-800">
@@ -31,6 +46,8 @@ import { supabase } from '../supabaseClient'
     )
     }
     else {
-      return (<div>Logged in!</div>)
+      return (
+        <div>Logged in!</div>
+      )
     }
   }
