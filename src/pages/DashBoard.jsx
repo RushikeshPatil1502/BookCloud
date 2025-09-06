@@ -19,7 +19,7 @@ function DashBoard() {
   } else {
     // clear context + redirect
     setUser(null);
-    window.location.href = "/";
+    window.location.href = "/Login";
   }
 };
 
