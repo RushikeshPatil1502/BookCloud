@@ -9,12 +9,20 @@ import { LiaBookSolid } from 'react-icons/lia';
 import { FaHeadphones } from 'react-icons/fa';
 
 function DashBoard() {
-    const {user} = useUser()
+    const {user,setUser} = useUser()
     console.log(user);
 
     const handleSignOut = async () => {
-        await supabase.auth.signOut();
-    }
+  const { error } = await supabase.auth.signOut();
+  if (error) {
+    console.error("Sign-out error:", error.message);
+  } else {
+    // clear context + redirect
+    setUser(null);
+    window.location.href = "/";
+  }
+};
+
 
   return (
     <div className='flex flex-col h-screen'>

@@ -10,11 +10,14 @@ export const UserContextProvider = ({children}) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 1. Get current session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-      setLoading(false);
+    supabase.auth.getUser().then(({ data: { user } }) => {
+    setUser(user);
     });
+    // 1. Get current session
+    // supabase.auth.getSession().then(({ data: { session } }) => {
+    //   setUser(session?.user ?? null);
+    //   setLoading(false);
+    // });
 
     // 2. Listen for login/logout events
     const {

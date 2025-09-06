@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { supabase } from '../supabaseClient'
-import DashBoard from "./DashBoard"
 import { useUser } from "../context/userContext"
 import { useNavigate } from "react-router-dom"
 
