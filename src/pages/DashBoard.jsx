@@ -24,7 +24,6 @@ const handleSignOut = async () => {
   }
 };
 
-};
 
 
   return (
