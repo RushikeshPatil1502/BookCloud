@@ -32,9 +32,6 @@ import { useNavigate } from "react-router-dom"
       return () => subscription.unsubscribe()
     }, [])
 
-    const signOut = async () =>{
-      const { error } = await supabase.auth.signOut()
-    }
 
     if (!session) {
       return (

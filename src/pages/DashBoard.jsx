@@ -9,22 +9,21 @@ import { useNavigate } from "react-router-dom";
 import { Sidebar, SidebarItem, SidebarItemGroup, SidebarItems } from "flowbite-react";
 import { LiaBookSolid } from 'react-icons/lia';
 import { FaHeadphones } from 'react-icons/fa';
+import UploadBook from '../components/UploadBook';
 
 function DashBoard() {
     const {user,setUser} = useUser()
     console.log(user);
 
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
-const handleSignOut = async () => {
-  const { error } = await supabase.auth.signOut();
-  if (!error) {
-    setUser(null);
-    navigate("/Login"); // ✅ handled client-side, no server fetch
-  }
-};
-
-
+    const handleSignOut = async () => {
+      const { error } = await supabase.auth.signOut();
+      if (!error) {
+        setUser(null);
+        navigate("/Login"); // ✅ handled client-side, no server fetch
+      }
+    };
 
   return (
     <div className='flex flex-col h-screen'>
@@ -54,7 +53,7 @@ const handleSignOut = async () => {
             </Sidebar>
 
             <main className='flex flex-1 justify-center mt-12'>
-               <h1>Upload Books here</h1>
+               <UploadBook />
             </main>
          </div>
 
