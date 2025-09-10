@@ -10,6 +10,7 @@ import { Sidebar, SidebarItem, SidebarItemGroup, SidebarItems } from "flowbite-r
 import { LiaBookSolid } from 'react-icons/lia';
 import { FaHeadphones } from 'react-icons/fa';
 import UploadBook from '../components/UploadBook';
+import BooksCard from '../components/BooksCard';
 
 function DashBoard() {
     const {user,setUser} = useUser()
@@ -38,22 +39,23 @@ function DashBoard() {
             </div>
          </nav>
 
-         <div className='flex flex-1 px-4'>
+         <div className='flex flex-1 px-4 gap-8 items-start mt-12'>
             <Sidebar className='w-20' aria-label="Default sidebar example">
               <SidebarItems>
                 <SidebarItemGroup className='flex flex-col items-center justify-between gap-6'>
                   <SidebarItem className='text-6xl font-bold shadow p-4 hover:bg-gray-100'>
-                    <LiaBookSolid />
+                    <LiaBookSolid className='text-black' />
                   </SidebarItem>
                   <SidebarItem className='text-6xl font-bold shadow p-4 hover:bg-gray-100'>
-                    <FaHeadphones />
+                    <FaHeadphones className='text-black' />
                   </SidebarItem>
                 </SidebarItemGroup>
               </SidebarItems>
             </Sidebar>
 
-            <main className='flex flex-1 justify-center mt-12'>
+            <main className='flex flex-1 flex-row gap-4'>
                <UploadBook />
+               <BooksCard />
             </main>
          </div>
 
